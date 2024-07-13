@@ -1,4 +1,4 @@
-public record MoedasDados(String base_Code,
-                          String target_Code,
-                          String conversion_Result) {
+public record MoedasDados(String base_code,
+                          String target_code,
+                          double conversion_result) {
 }
