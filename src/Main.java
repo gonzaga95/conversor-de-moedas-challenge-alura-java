@@ -30,7 +30,7 @@ public class Main {
                     var targetCode = scanner.nextLine().toUpperCase();
                     try {
                         MoedasDados conversao = connectExchangeRateApi.fazConversao(baseCode, targetCode, amount);
-                        System.out.println(conversao.toString());
+                        System.out.println(conversao.toString().replace("AMOUNT", amount));
                     }
                     catch (Exception e) {
                         System.out.println(e);
