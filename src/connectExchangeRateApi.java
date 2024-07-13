@@ -26,14 +26,11 @@ public class connectExchangeRateApi {
                 .build();
 
         try {
-            HttpResponse<String> response = HttpClient.
-                    newHttpClient()
+            HttpResponse<String> response = client
                     .send(request, HttpResponse.BodyHandlers.ofString());
 
             return new Gson().fromJson(response.body(), MoedasDados.class);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        } catch (InterruptedException e) {
+        } catch (IOException | InterruptedException e) {
             throw new RuntimeException(e);
         }
 
