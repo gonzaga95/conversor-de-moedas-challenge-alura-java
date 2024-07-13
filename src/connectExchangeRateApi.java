@@ -10,11 +10,11 @@ public class connectExchangeRateApi {
 
     Chave chave = new Chave();
 
-    public MoedasDados fazConversao (String baseCode,
+    public String fazConversao (String baseCode,
                                      String targetCode,
                                      String amount){
         URI uri = URI.create("https://v6.exchangerate-api.com/v6/" +
-                chave +
+                chave.getChave() +
                 "/pair/"+
                 baseCode + "/" +
                 targetCode + "/" +
@@ -29,7 +29,7 @@ public class connectExchangeRateApi {
             HttpResponse<String> response = client
                     .send(request, HttpResponse.BodyHandlers.ofString());
 
-            return new Gson().fromJson(response.body(), MoedasDados.class);
+            return response.body();
         } catch (IOException | InterruptedException e) {
             throw new RuntimeException(e);
         }
