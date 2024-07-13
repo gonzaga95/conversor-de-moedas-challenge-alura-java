@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner((System.in));
-        connectExchangeRateApi connectExchangeRateApi = new connectExchangeRateApi();
+        ConnectExchangeRateApi connectExchangeRateApi = new ConnectExchangeRateApi();
 
         String opcao;
 
@@ -29,8 +29,9 @@ public class Main {
                     System.out.println("Escolha a moeda final da conversão");
                     var targetCode = scanner.nextLine().toUpperCase();
                     try {
-
-                        System.out.println(connectExchangeRateApi.fazConversao(baseCode, targetCode, amount));}
+                        MoedasDados conversao = connectExchangeRateApi.fazConversao(baseCode, targetCode, amount);
+                        System.out.println(conversao.toString());
+                    }
                     catch (Exception e) {
                         System.out.println(e);
                     }
