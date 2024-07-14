@@ -8,9 +8,8 @@ public class Main {
         String opcao;
 
         System.out.println(
-                "Bem-vinde ao conversor de moedas" +
-                        "\nUtilizamos o padrão de códigos de três letras para moedas"
-        );
+                "Bem-vinde ao conversor de moedas");
+
         do {
 
             System.out.println("""
@@ -23,6 +22,8 @@ public class Main {
             switch (opcao) {
                 case "1":
                     System.out.println("Escolha a moeda base para conversão");
+                    System.out.println("Utilizamos o padrão de códigos de três letras para moedas" +
+                            "\nUSD, EUR, BRL, CAD, ARS, RMB, etc etc");
                     var baseCode = scanner.nextLine().toUpperCase();
                     System.out.println("Insira o valor a ser convertido");
                     var amount = scanner.nextLine();
