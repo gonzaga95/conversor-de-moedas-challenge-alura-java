@@ -34,11 +34,11 @@ public class Main {
                         System.out.println(conversao.toString().replace("AMOUNT", amount));
                     }
                     catch (Exception e) {
-                        System.out.println(e);
+                        System.out.println(e.getMessage());
                     }
                     break;
                 case "2":
-                    System.out.println("Lista de conversões");
+                    System.out.println("Lista de conversões [EM DESENVOLVIMENTO]");
                     break;
                 case "9":
                     continue;
